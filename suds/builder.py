@@ -118,4 +118,3 @@ class Builder:
                 name = '_%s' % child.name
             result.append(name)
         return result
-            
