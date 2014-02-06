@@ -57,7 +57,7 @@ class Builder:
         for child, ancestry in type.children():
             if self.skip_child(child, ancestry):
                 continue
-            self.process(data, child, history[:])
+            self.process(data, child, history)
         return data
             
     def process(self, data, type, history):
