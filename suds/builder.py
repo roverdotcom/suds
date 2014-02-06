@@ -90,7 +90,7 @@ class Builder:
             for child, ancestry in resolved.children():
                 if self.skip_child(child, ancestry):
                     continue
-                self.process(data, child, history[:])
+                self.process(data, child, history)
 
     def add_attributes(self, data, type):
         """ add required attributes """
@@ -118,3 +118,4 @@ class Builder:
                 name = '_%s' % child.name
             result.append(name)
         return result
+            
