@@ -653,7 +653,12 @@ class SoapClient:
             if e.httpcode in (202,204):
                 result = None
             else:
-                log.error(self.last_sent())
+                log.error(
+                    "Soap send failed, httpcode %s",
+                    e.httpcode,
+                    exc_info=True,
+                    extra={'xml': self.last_sent()}
+                )
                 result = self.failed(binding, e)
         return result
     
